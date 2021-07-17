@@ -1,0 +1,46 @@
+name: Deploying to PyPI
+
+on:
+  release:
+    types:
+      - published
+
+# env for all jobs
+env:
+  POETRY_CACHE_DIR: ~/.cache/pypoetry
+  PIP_CACHE_DIR: ~/.cache/pip
+  # increase this value to manually reset cache
+  CACHE_NUMBER: 0
+
+jobs:
+  pypi:
+    name: Deploy to PyPI
+    runs-on: ubuntu-20.04
+    steps:
+      - # get repository code
+        name: Checkout code
+        uses: actions/checkout@v2
+      - # get conda, poetry and pip cache (persistent between runs)
+        name: Cache packages
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ env.POETRY_CACHE_DIR }}
+            ${{ env.PIP_CACHE_DIR }}
+          key: ${{ runner.os }}-pkgs-${{ env.CACHE_NUMBER }} }}
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Set up pip cache
+        run: python3 -m pip config set global.cache-dir ${{ env.PIP_CACHE_DIR }}
+      - name: Install poetry
+        run: python3 -m pip install poetry
+      - name: Set up poetry cache
+        run: poetry config cache-dir ${{ env.POETRY_CACHE_DIR }}
+      - name: Bump version
+        working-directory: kilroy
+        run: poetry version '${{ github.event.release.tag_name }}'
+      - name: Publish the package
+        working-directory: kilroy
+        run: poetry publish --build -u '__token__' -p '${{ secrets.PYPI_TOKEN }}'
