@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "kilroy"
+version = "0.1.0"
+description = "kilroy social bot 🤖"
+readme = "README.md"
+authors = ["kilroy <kilroymail@pm.me>"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+repository = "https://github.com/kilroybot/kilroy"
+documentation = "https://kilroybot.github.io/kilroy"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+typer = { version = "^0.3", extras = ["all"] }
+kilroylib = "^0.1"
+kilroyfaces = "^0.1"
+
+# dev
+
+# test
+pytest = { version = "^6", optional = true }
+
+# docs
+mkdocs-material = { version = "^7", optional = true }
+
+[tool.poetry.extras]
+# need to do it that way until poetry supports dependency groups: https://github.com/python-poetry/poetry/issues/1644
+dev = ["pytest", "mkdocs-material"]
+test = ["pytest"]
+docs = ["mkdocs-material"]
+[tool.poetry.scripts]
+# cli entry point
+kilroy = "kilroy.__main__:cli"
+
+[build-system]
+# this should be there, see https://python-poetry.org/docs/pyproject/#poetry-and-pep-517
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
