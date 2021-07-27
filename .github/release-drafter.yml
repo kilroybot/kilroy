@@ -1,24 +1,24 @@
-name-template: '$RESOLVED_VERSION'
-tag-template: '$RESOLVED_VERSION'
+name-template: "$RESOLVED_VERSION"
+tag-template: "$RESOLVED_VERSION"
 categories:
-  - title: '🚀 Features'
+  - title: "🚀 Features"
     labels:
-      - 'feature'
-  - title: '🐛 Bug Fixes'
+      - "feature"
+  - title: "🐛 Bug Fixes"
     labels:
-      - 'bug'
+      - "bug"
 exclude-labels:
-  - 'skip-changelog'
+  - "skip-changelog"
 change-title-escapes: '\<*_&'
 template: |
   ```
-  
-                           ##########
-                        ###          ###
-                      ##                ##
-                    ##                    ##
-                   ##   ###          ###   ##
-         ####     ##   # o #  #  #  # o #   ##     ####
+                                                              
+                           ##########                         
+                        ###          ###                      
+                      ##                ##                    
+                    ##                    ##                  
+                   ##   ###          ###   ##                 
+         ####     ##   # o #  #  #  # o #   ##     ####       
   ------#    #--------------- #  # ---------------#    #------
   |      ####                 #  #                 ####      |
   |                            ##                            |
@@ -31,7 +31,7 @@ template: |
   |                                                          |
   |                                                          |
   ------------------------------------------------------------
-  
+                                                              
   ```
 
   $CHANGES

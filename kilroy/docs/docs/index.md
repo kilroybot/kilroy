@@ -6,7 +6,7 @@ TODO
 
 ## Installing
 
-Using ```pip```:
+Using `pip`:
 
 ```sh
 pip install kilroy

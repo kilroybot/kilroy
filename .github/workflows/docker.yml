@@ -7,24 +7,24 @@ on:
       - main
     # trigger only on changes to the following files
     paths:
-      - 'kilroy/src/**'
-      - 'environment.yml'
-      - 'kilroy/poetry.lock'
-      - 'kilroy/pyproject.toml'
-      - 'Dockerfile'
-      - '.github/workflows/docker.yml'
+      - "kilroy/src/**"
+      - "environment.yml"
+      - "kilroy/poetry.lock"
+      - "kilroy/pyproject.toml"
+      - "Dockerfile"
+      - ".github/workflows/docker.yml"
   pull_request:
     # trigger only on main branch
     branches:
       - main
     # trigger only on changes to the following files
     paths:
-      - 'kilroy/src/**'
-      - 'environment.yml'
-      - 'kilroy/poetry.lock'
-      - 'kilroy/pyproject.toml'
-      - 'Dockerfile'
-      - '.github/workflows/docker.yml'
+      - "kilroy/src/**"
+      - "environment.yml"
+      - "kilroy/poetry.lock"
+      - "kilroy/pyproject.toml"
+      - "Dockerfile"
+      - ".github/workflows/docker.yml"
 
 jobs:
   docker:
