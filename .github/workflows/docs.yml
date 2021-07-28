@@ -8,15 +8,10 @@ on:
     # trigger only on changes to the following files
     paths:
       - "kilroy/docs/**"
-      - "environment.yml"
-      - "kilroy/poetry.lock"
-      - "kilroy/pyproject.toml"
       - ".github/workflows/docs.yml"
 
 # env for all jobs
 env:
-  CONDA_CACHE_DIR: ~/conda_pkgs_dir
-  POETRY_CACHE_DIR: ~/.cache/pypoetry
   PIP_CACHE_DIR: ~/.cache/pip
   # increase this value to manually reset cache
   CACHE_NUMBER: 0
@@ -26,21 +21,13 @@ jobs:
     name: Deploy docs
     # better to use pinned version here
     runs-on: ubuntu-20.04
-    defaults:
-      run:
-        # necessary for conda to work
-        shell: bash -l {0}
     steps:
-      - # get repository code
-        name: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v2
-      - # get conda, poetry and pip cache (persistent between runs)
-        name: Cache packages
+      - name: Cache packages
         uses: actions/cache@v2
         with:
           path: |
-            ${{ env.CONDA_CACHE_DIR }}
-            ${{ env.POETRY_CACHE_DIR }}
             ${{ env.PIP_CACHE_DIR }}
           key: ${{ runner.os }}-pkgs-${{ env.CACHE_NUMBER }}
       - name: Set up Python
@@ -49,22 +36,9 @@ jobs:
           python-version: "3.x"
       - name: Set up pip cache
         run: python3 -m pip config set global.cache-dir ${{ env.PIP_CACHE_DIR }}
-      - name: Install poetry
-        run: python3 -m pip install poetry
-      - name: Set up poetry cache
-        run: poetry config cache-dir ${{ env.POETRY_CACHE_DIR }}
-      - # create and activate conda environment
-        name: Set up environment
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-          activate-environment: kilroy
-          environment-file: environment.yml
-          # necessary for caching to work
-          use-only-tar-bz2: true
-      - name: Install docs tools
-        working-directory: kilroy
-        # we need to install all base dependencies, waiting for https://github.com/python-poetry/poetry/issues/1644
-        run: poetry install --no-root --extras docs
+      - name: Install mkdocs
+        working-directory: kilroy/docs
+        run: python3 -m pip install -r requirements.txt
       - name: Deploy docs
         working-directory: kilroy/docs
         run: mkdocs gh-deploy --force
