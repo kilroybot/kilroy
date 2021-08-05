@@ -27,7 +27,7 @@ on:
       - ".github/workflows/docker.yml"
 
 jobs:
-  docker:
+  docker-build:
     runs-on: ubuntu-20.04
     steps:
       - # get repository code
