@@ -75,7 +75,7 @@ You need to have it installed outside our environment (I recommend to use [`pipx
 To install the package, you need to `cd` into `kilroy` directory and run:
 
 ```sh
-poetry install --extras dev
+poetry install --extras dev --remove-untracked
 ```
 
 This will download and install all package dependencies (including optional development ones) and install the package in editable mode into the activate environment.
