@@ -2,28 +2,14 @@
 
 <div align="center">
 
-[![Running tests](https://github.com/kilroybot/kilroy/actions/workflows/test.yml/badge.svg)](https://github.com/kilroybot/kilroy/actions/workflows/test.yml)
-[![Deploying docs](https://github.com/kilroybot/kilroy/actions/workflows/docs.yml/badge.svg)](https://github.com/kilroybot/kilroy/actions/workflows/docs.yml)
+kilroy social bot 🤖
+
+[![Multiplatform tests](https://github.com/kilroybot/kilroy/actions/workflows/test-multiplatform.yml/badge.svg)](https://github.com/kilroybot/kilroy/actions/workflows/test-multiplatform.yml)
+[![Docker tests](https://github.com/kilroybot/kilroy/actions/workflows/test-docker.yml/badge.svg)](https://github.com/kilroybot/kilroy/actions/workflows/test-docker.yml)
+[![Docs](https://github.com/kilroybot/kilroy/actions/workflows/docs.yml/badge.svg)](https://github.com/kilroybot/kilroy/actions/workflows/docs.yml)
 
 </div>
 
 ---
 
-kilroy social bot 🤖
-
 TODO
-
-## Installing
-
-Using `pip`:
-
-```sh
-pip install kilroy
-```
-
-## Usage
-
-```sh
-$ kilroy
-1
-```

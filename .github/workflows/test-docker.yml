@@ -1,6 +1,7 @@
-name: Testing docker build
+name: Docker tests
 
 on:
+  workflow_dispatch:
   push:
     # trigger only on main branch
     branches:
@@ -8,11 +9,13 @@ on:
     # trigger only on changes to the following files
     paths:
       - "kilroy/src/**"
-      - "environment.yml"
+      - "kilroy/tests/**"
       - "kilroy/poetry.lock"
       - "kilroy/pyproject.toml"
+      - "environment.yml"
+      - "requirements.txt"
       - "Dockerfile"
-      - ".github/workflows/docker.yml"
+      - ".github/workflows/test-docker.yml"
   pull_request:
     # trigger only on main branch
     branches:
@@ -20,14 +23,17 @@ on:
     # trigger only on changes to the following files
     paths:
       - "kilroy/src/**"
-      - "environment.yml"
+      - "kilroy/tests/**"
       - "kilroy/poetry.lock"
       - "kilroy/pyproject.toml"
+      - "environment.yml"
+      - "requirements.txt"
       - "Dockerfile"
-      - ".github/workflows/docker.yml"
+      - ".github/workflows/test-docker.yml"
 
 jobs:
-  docker-build:
+  test-docker:
+    name: Run tests inside Docker container
     runs-on: ubuntu-20.04
     steps:
       - # get repository code
@@ -35,23 +41,14 @@ jobs:
         uses: actions/checkout@v2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
-      - name: Cache Docker layers
-        uses: actions/cache@v2
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx
       - name: Build the image
         uses: docker/build-push-action@v2
         with:
           context: .
-          push: false
-          tags: kilroy:latest
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache-new
-      - # Temp fix
-        # https://github.com/docker/build-push-action/issues/252
-        # https://github.com/moby/buildkit/issues/1896
-        name: Move cache
-        run: |
-          rm -rf /tmp/.buildx-cache
-          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+          target: test
+          load: true
+          tags: kilroy:test
+          cache-from: type=gha, scope=${{ github.workflow }}
+          cache-to: type=gha, mode=max, scope=${{ github.workflow }}
+      - name: Run tests
+        run: docker run --rm kilroy:test

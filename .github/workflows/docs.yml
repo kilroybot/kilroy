@@ -1,6 +1,7 @@
-name: Deploying docs
+name: Docs
 
 on:
+  workflow_dispatch:
   push:
     # trigger only on main branch
     branches:
@@ -17,7 +18,7 @@ env:
   CACHE_NUMBER: 0
 
 jobs:
-  deploy-docs:
+  docs:
     name: Deploy docs
     # better to use pinned version here
     runs-on: ubuntu-20.04
@@ -33,7 +34,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.x"
+          python-version: "3.9.7"
       - name: Set up pip cache
         run: python3 -m pip config set global.cache-dir ${{ env.PIP_CACHE_DIR }}
       - name: Install mkdocs

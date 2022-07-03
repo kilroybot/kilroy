@@ -118,7 +118,7 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-/site
+site/
 
 # mypy
 .mypy_cache/
@@ -129,5 +129,3 @@ dmypy.json
 .pyre/
 
 .idea/
-
-kilroy/docs/site/

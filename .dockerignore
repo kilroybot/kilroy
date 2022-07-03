@@ -1,0 +1,9 @@
+*
+!kilroy/src/**
+!kilroy/tests/**
+!kilroy/pyproject.toml
+!kilroy/poetry.lock
+!kilroy/LICENSE
+!kilroy/README.md
+!environment.yml
+!requirements.txt

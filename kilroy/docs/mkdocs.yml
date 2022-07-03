@@ -73,5 +73,4 @@ extra:
 
 nav:
   - Home: index.md
-  - Usage:
-      - Command line: usage/cli.md
+  - Usage: usage.md
