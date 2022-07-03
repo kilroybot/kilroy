@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" version="1.1" viewBox="0 0 132.29 132.29" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <mask id="mask-powermask-path-effect1641" maskUnits="userSpaceOnUse">
+   <path id="mask-powermask-path-effect1641_box" d="m-1-1h134.29v134.29h-134.29z" fill="#fff"/>
+   <g>
+    <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+     <g>
+      <path transform="scale(.26458)" d="m419.25 250h30.752" stroke-width="10" style="paint-order:stroke markers fill"/>
+      <path transform="scale(.26458)" d="m273.45 250 102.29 2e-5" stroke-width="10" style="paint-order:stroke markers fill"/>
+      <path transform="scale(.26458)" d="m124.21 250h102.34" stroke-width="10" style="paint-order:stroke markers fill"/>
+      <path transform="scale(.26458)" d="m50 250 30.795-1e-5" stroke-width="10" style="paint-order:stroke markers fill"/>
+      <path d="m41.011 66.009a25.135 25.135 0 0 1 24.96-24.998 25.135 25.135 0 0 1 25.306 24.648" stroke-width="2.6458" style="paint-order:normal"/>
+     </g>
+     <path d="m71.258 59.641c7.4536 33.864-17.679 33.864-10.223 2e-6" stroke-width="2.6458"/>
+    </g>
+    <circle cx="53.578" cy="62.022" r="4.1238" style="paint-order:normal"/>
+    <circle cx="78.711" cy="62.022" r="4.1238" style="paint-order:normal"/>
+    <circle cx="27.12" cy="66.009" r="5.7563" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6458" style="paint-order:normal"/>
+    <circle cx="105.17" cy="66.146" r="5.7563" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6458" style="paint-order:normal"/>
+   </g>
+  </mask>
+ </defs>
+ <g mask="url(#mask-powermask-path-effect1641)">
+  <circle cx="66.146" cy="66.146" r="66.146" d="M 132.29201,66.146004 A 66.146004,66.146004 0 0 1 66.146004,132.29201 66.146004,66.146004 0 0 1 0,66.146004 66.146004,66.146004 0 0 1 66.146004,0 66.146004,66.146004 0 0 1 132.29201,66.146004 Z" fill="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6458"/>
+ </g>
+</svg>
