@@ -1,6 +1,7 @@
-name: Updating draft release
+name: Draft
 
 on:
+  workflow_dispatch:
   push:
     # trigger only on main branch
     branches:

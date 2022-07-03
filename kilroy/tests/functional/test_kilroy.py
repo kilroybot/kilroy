@@ -18,20 +18,6 @@ class TestKilroy:
     def runner(self):
         return CliRunner()
 
-    def test_kilroy_returns_zero(self, runner):
-        result = runner.invoke(cli)
-        assert not result.exception
-        assert result.exit_code == 0
-
-    def test_kilroy_prints_something(self, runner):
-        result = runner.invoke(cli)
-        assert result.output
-
     def test_kilroy_prints_help(self, runner):
-        result = runner.invoke(cli, ['--help'])
+        result = runner.invoke(cli, ["--help"])
         assert "Usage" in result.output
-
-    def test_kilroy_works_with_arg(self, runner):
-        result = runner.invoke(cli, ['--x', 2])
-        assert not result.exception
-        assert result.exit_code == 0
