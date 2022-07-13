@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "kilroy"
-version = "0.1.0"
+version = "0.2.0"
 description = "kilroy social bot 🤖"
 readme = "README.md"
 authors = ["kilroy <kilroymail@pm.me>"]
@@ -12,6 +12,14 @@ documentation = "https://kilroybot.github.io/kilroy"
 [tool.poetry.dependencies]
 python = "^3.9"
 typer = { version = "^0.4", extras = ["all"] }
+kilroyfaces = { path = "/home/spietras/Repos/kilroybot/kilroyfaces/kilroyfaces", develop = true }
+#kilroylib = "^0.4"
+kilroylib = { path = "/home/spietras/Repos/kilroybot/kilroylib/kilroylib", develop = true }
+#kilroytorch = "^0.3"
+kilroytorch = { path = "/home/spietras/Repos/kilroybot/kilroytorch/kilroytorch", develop = true }
+transformers = "^4.20"
+pydantic = "^1.9"
+websockets = "^10.3"
 
 # dev
 
