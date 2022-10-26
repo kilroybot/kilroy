@@ -1,6 +1,6 @@
 <div markdown align="center">
 
-<img src="assets/logo-black.svg" width="256"/>
+<img src="https://raw.githubusercontent.com/kilroybot/assets/main/logos/svg/logo-black-bg-rounded.svg" width="256"/>
 
 **kilroy** social bot 🤖
 
