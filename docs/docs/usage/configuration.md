@@ -7,7 +7,7 @@ All services need to define and expose a schema of their configuration.
 This schema is used to build a form in the dashboard that allows you to
 change the configuration of the service.
 
-![Configuration form example](assets/configuration.png){ loading=lazy } Configuration form example
+![Configuration form example](../assets/configuration.png){ loading=lazy }
 
 Also, all the default implementations of services store their state on disk
 on exit, and load it back on startup.

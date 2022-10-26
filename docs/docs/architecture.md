@@ -5,7 +5,7 @@ each with their own responsibilities.
 You can replace any of these parts with your own implementation,
 as long as it conforms to the API.
 
-![Architecture diagram](assets/architecture.svg){ loading=lazy } Architecture diagram
+![Architecture diagram](assets/architecture.svg){ loading=lazy }
 
 ## Parts
 

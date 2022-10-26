@@ -60,4 +60,4 @@ and a detailed view of all the metrics.
 
 You can control the training process by starting and stopping it.
 
-![Training page](assets/pages/training.png){ loading=lazy } Training page
+![Training page](../assets/pages/training.png){ loading=lazy }
