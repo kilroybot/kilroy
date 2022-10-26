@@ -1,2 +1,21 @@
 # kilroy
+
 kilroy social bot 🤖
+
+## About
+
+**Kilroy** is a framework for training bots to generate viral social media posts.
+
+You can deploy your own instance of **kilroy**
+using any backbone model and train it on any social media platform.
+
+## Quickstart
+
+To deploy locally and see **kilroy** in action,
+go to the [`example`](/example/) directory
+and follow the steps.
+
+## Docs
+
+For more detailed information,
+see the [docs](https://kilroybot.github.io/kilroy).
