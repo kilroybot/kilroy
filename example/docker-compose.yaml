@@ -1,0 +1,64 @@
+services:
+  kilroyweb:
+    image: ghcr.io/kilroybot/kilroyweb:0.3.0
+    ports:
+      - "14000:14000"
+    environment:
+      - "KILROYWEB_API_URL=http://grpc-web-proxy:13000"
+    depends_on:
+      - grpc-web-proxy
+
+  grpc-web-proxy:
+    image: ghcr.io/kilroybot/grpc-web-proxy:0.1.0
+    ports:
+      - "13000:13000"
+    environment:
+      - "GRPC_WEB_PROXY_TARGET_HOST=cilroy"
+      - "GRPC_WEB_PROXY_TARGET_PORT=12000"
+    depends_on:
+      - cilroy
+
+  cilroy:
+    image: ghcr.io/kilroybot/cilroy:0.5.0
+    ports:
+      - "12000:12000"
+    environment:
+      - "CILROY_STATE_DIRECTORY=/etc/cilroy"
+      - "CILROY_CONTROLLER__FACE__HOST=kilroy-face-discord"
+      - "CILROY_CONTROLLER__FACE__PORT=10000"
+      - "CILROY_CONTROLLER__MODULE__HOST=kilroy-module-huggingface"
+      - "CILROY_CONTROLLER__MODULE__PORT=11000"
+    volumes:
+      - cilroy:/etc/cilroy
+    depends_on:
+      - kilroy-face-discord
+      - kilroy-module-huggingface
+
+  kilroy-face-discord:
+    image: ghcr.io/kilroybot/kilroy-face-discord:0.6.1
+    ports:
+      - "10000:10000"
+    environment:
+      - "KILROY_FACE_DISCORD_STATE_DIRECTORY=/etc/kilroy-face-discord"
+      - "KILROY_FACE_DISCORD_FACE__TOKEN=${KILROY_FACE_DISCORD_FACE__TOKEN}"
+      - "KILROY_FACE_DISCORD_FACE__CHANNEL_ID=${KILROY_FACE_DISCORD_FACE__CHANNEL_ID}"
+    volumes:
+      - kilroy-face-discord:/etc/kilroy-face-discord
+
+  kilroy-module-huggingface:
+    image: ghcr.io/kilroybot/kilroy-module-huggingface:0.6.2
+    ports:
+      - "11000:11000"
+    environment:
+      - "HF_HOME=/etc/huggingface/"
+      - "KILROY_MODULE_HUGGINGFACE_STATE_DIRECTORY=/etc/kilroy-module-huggingface"
+    volumes:
+      - kilroy-module-huggingface:/etc/kilroy-module-huggingface
+      - huggingface-cache:/etc/huggingface/
+
+volumes:
+  cilroy:
+  kilroy-face-discord:
+  kilroy-face-twitter:
+  kilroy-module-huggingface:
+  huggingface-cache:
