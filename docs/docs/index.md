@@ -1,6 +1,12 @@
-# kilroy
+<div markdown align="center">
 
-kilroy social bot 🤖
+<img src="assets/logo-black.svg" width="256"/>
+
+**kilroy** social bot 🤖
+
+[![Docs](https://github.com/kilroybot/kilroy/actions/workflows/docs.yaml/badge.svg)](https://github.com/kilroybot/kilroy/actions/workflows/docs.yaml)
+
+</div>
 
 ## About
 
