@@ -9,19 +9,19 @@ and targets [Discord](https://discord.com) as the environment.
 
 ## Prerequisites
 
-First, you need to have a Discord bot token.
-You can obtain one [here](https://discord.com/developers/applications).
+First, you need to get the necessary files.
+You can get them [here](https://github.com/kilroybot/kilroy/tree/main/example).
 
-Then, you need to find a channel in some Discord server,
-which you want to use from training.
+Then, you need to create a Discord bot and obtain its token.
+You can do it [here](https://discord.com/developers/applications).
+
+You also need to find a channel in some Discord server,
+which you want to use for training.
 
 Paste the bot token and channel ID into appropriate entries in the `.env` file.
 
 You also need to install Docker and Docker Compose.
 You can get them [here](https://docs.docker.com/get-docker).
-
-And lastly, you need to get the necessary files.
-You can get them [here](https://github.com/kilroybot/kilroy/tree/master/example).
 
 ## Running
 

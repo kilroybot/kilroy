@@ -52,7 +52,7 @@ But of course, you can write your own controller.
 
 ### gRPC-Web Proxy
 
-This parts enables the Web UI to communicate with the controller.
+This parts enables the dashboard to communicate with the controller.
 You can find the implementation
 [here](https://github.com/kilroybot/grpc-web-proxy).
 It should work as it is.
