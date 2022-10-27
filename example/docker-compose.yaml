@@ -59,6 +59,5 @@ services:
 volumes:
   cilroy:
   kilroy-face-discord:
-  kilroy-face-twitter:
   kilroy-module-huggingface:
   huggingface-cache:
