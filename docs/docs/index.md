@@ -11,7 +11,7 @@
 ## About
 
 **Kilroy** is a framework for training bots
-to generate viral social media posts.
+to generate engaging social media posts.
 
 It uses reinforcement learning, as well as usual supervised learning,
 to steer bots posting on social media to generate content

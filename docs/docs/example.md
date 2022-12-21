@@ -15,10 +15,12 @@ You can get them [here](https://github.com/kilroybot/kilroy/tree/main/example).
 Then, you need to create a Discord bot and obtain its token.
 You can do it [here](https://discord.com/developers/applications).
 
-You also need to find a channel in some Discord server,
-which you want to use for training.
+You also need to find two channels in some Discord server,
+one for user messages and one for bot messages.
+It can be the same channel, if you want it that way.
 
-Paste the bot token and channel ID into appropriate entries in the `.env` file.
+Paste the bot token and channel IDs
+into appropriate entries in the `.env` file.
 
 You also need to install Docker and Docker Compose.
 You can get them [here](https://docs.docker.com/get-docker).
