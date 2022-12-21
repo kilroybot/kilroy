@@ -1,6 +1,6 @@
 services:
   kilroyweb:
-    image: ghcr.io/kilroybot/kilroyweb:0.3.0
+    image: ghcr.io/kilroybot/kilroyweb:0.4.1
     ports:
       - "14000:14000"
     environment:
@@ -19,7 +19,7 @@ services:
       - cilroy
 
   cilroy:
-    image: ghcr.io/kilroybot/cilroy:0.5.0
+    image: ghcr.io/kilroybot/cilroy:0.6.1
     ports:
       - "12000:12000"
     environment:
@@ -35,18 +35,19 @@ services:
       - kilroy-module-huggingface
 
   kilroy-face-discord:
-    image: ghcr.io/kilroybot/kilroy-face-discord:0.6.1
+    image: ghcr.io/kilroybot/kilroy-face-discord:0.7.3
     ports:
       - "10000:10000"
     environment:
       - "KILROY_FACE_DISCORD_STATE_DIRECTORY=/etc/kilroy-face-discord"
       - "KILROY_FACE_DISCORD_FACE__TOKEN=${KILROY_FACE_DISCORD_FACE__TOKEN}"
-      - "KILROY_FACE_DISCORD_FACE__CHANNEL_ID=${KILROY_FACE_DISCORD_FACE__CHANNEL_ID}"
+      - "KILROY_FACE_DISCORD_FACE__SCRAPING_CHANNEL_ID=${KILROY_FACE_DISCORD_FACE__SCRAPING_CHANNEL_ID}"
+      - "KILROY_FACE_DISCORD_FACE__POSTING_CHANNEL_ID=${KILROY_FACE_DISCORD_FACE__POSTING_CHANNEL_ID}"
     volumes:
       - kilroy-face-discord:/etc/kilroy-face-discord
 
   kilroy-module-huggingface:
-    image: ghcr.io/kilroybot/kilroy-module-huggingface:0.6.2
+    image: ghcr.io/kilroybot/kilroy-module-huggingface:0.7.5
     ports:
       - "11000:11000"
     environment:
