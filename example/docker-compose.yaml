@@ -20,6 +20,7 @@ services:
 
   cilroy:
     image: ghcr.io/kilroybot/cilroy:0.6.1
+    stop_grace_period: 10m
     ports:
       - "12000:12000"
     environment:
@@ -36,6 +37,7 @@ services:
 
   kilroy-face-discord:
     image: ghcr.io/kilroybot/kilroy-face-discord:0.7.3
+    stop_grace_period: 10m
     ports:
       - "10000:10000"
     environment:
@@ -48,6 +50,7 @@ services:
 
   kilroy-module-huggingface:
     image: ghcr.io/kilroybot/kilroy-module-huggingface:0.7.5
+    stop_grace_period: 10m
     ports:
       - "11000:11000"
     environment:
